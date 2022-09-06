@@ -3,14 +3,14 @@ require_once 'includes/header.php';
 ?>
 
 <?php
-echo "sddssdsds";
 
 if(isset($_SESSION['sessionid'])) {
     if($_SESSION['sessionranking']>1){
     echo "
         <a  class ='info-link' href='tocsv'>Export USERS table to CSV</a><br>
+        <br>
         <hr>
-    
+        <br>
         <p>Send Email to everyone:</p>
     
         <form action='includes/adminemail.php' method='post'>
@@ -18,6 +18,8 @@ if(isset($_SESSION['sessionid'])) {
             <input type='text' name='subject' placeholder='Subject'>
             <p>Body</p>
             <textarea name='body'  style='height: 200px; width: 1100px;'></textarea>
+            <br>
+            <br>
             <button type='submit' name='submit'>Send E-mail</button>
     
    
