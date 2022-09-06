@@ -116,7 +116,7 @@
                         mysqli_stmt_execute($stmt);
 
 
-                        header("Location:../login.php");
+                        header("Location:mailservice.php?data={$email}");
                         exit();
 
                     }

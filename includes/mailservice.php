@@ -1,12 +1,11 @@
 <?php
+$onlyonce = 1;
 
-$sendRegisterEmail = false;
-function fnDo(){
-    $sendRegisterEmail = true;
-}
-fnDo();
-if($sendRegisterEmail){
+
+if($onlyonce == 1){
+    $onlyonce +=1;
     if(isset($_GET["data"])) {
+        echo "got here";
         $data = $_GET["data"];
         ini_set('display_errors', 1);
         error_reporting(E_ALL);
@@ -45,7 +44,7 @@ if($sendRegisterEmail){
                             bye and stuff";
         $headers = "From:" . $from;
         if(mail($to,$subject,$message, $headers)) {
-            header("Location:../login");
+            header("Location:../login?success=registeremailsent");
 
             ;
         } else {
